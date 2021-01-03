@@ -1,0 +1,11 @@
+modLoader="javafml"
+loaderVersion="[28,)"
+issueTrackerURL="https://github.com/Ellpeck/MoreFlowerBushes"
+license="MIT"
+[[mods]]
+modId="moreflowerbushes"
+version="${file.jarVersion}"
+displayName="More Flower Bushes"
+authors="Ellpeck"
+description='''
+Commission for Rallen'''

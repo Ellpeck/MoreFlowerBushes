@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "red_dye",
+    "ingredients": [
+        {
+            "item": "moreflowerbushes:fuchsia"
+        }
+    ],
+    "result": {
+        "item": "minecraft:magenta_dye",
+        "count": 2
+    }
+}

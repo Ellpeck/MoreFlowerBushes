@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cross",
+    "textures": {
+        "cross": "moreflowerbushes:block/purple_hibiscus_top"
+    }
+}

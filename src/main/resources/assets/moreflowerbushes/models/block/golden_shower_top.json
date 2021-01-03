@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cross",
+    "textures": {
+        "cross": "moreflowerbushes:block/golden_shower_top"
+    }
+}

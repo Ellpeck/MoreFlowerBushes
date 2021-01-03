@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "red_dye",
+    "ingredients": [
+        {
+            "item": "moreflowerbushes:butterfly_weed"
+        }
+    ],
+    "result": {
+        "item": "minecraft:orange_dye",
+        "count": 2
+    }
+}

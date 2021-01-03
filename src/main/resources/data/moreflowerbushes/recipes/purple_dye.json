@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "red_dye",
+    "ingredients": [
+        {
+            "item": "moreflowerbushes:purple_hibiscus"
+        }
+    ],
+    "result": {
+        "item": "minecraft:purple_dye",
+        "count": 2
+    }
+}

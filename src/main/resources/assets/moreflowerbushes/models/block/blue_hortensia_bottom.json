@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cross",
+    "textures": {
+        "cross": "moreflowerbushes:block/blue_hortensia_bottom"
+    }
+}

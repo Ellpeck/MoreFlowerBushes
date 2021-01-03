@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "red_dye",
+    "ingredients": [
+        {
+            "item": "moreflowerbushes:golden_shower"
+        }
+    ],
+    "result": {
+        "item": "minecraft:yellow_dye",
+        "count": 2
+    }
+}

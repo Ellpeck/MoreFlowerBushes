@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cross",
+    "textures": {
+        "cross": "moreflowerbushes:block/butterfly_weed_top"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "half=lower": {
+            "model": "moreflowerbushes:block/blue_hortensia_bottom"
+        },
+        "half=upper": {
+            "model": "moreflowerbushes:block/blue_hortensia_top"
+        }
+    }
+}

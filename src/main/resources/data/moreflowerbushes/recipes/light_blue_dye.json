@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "red_dye",
+    "ingredients": [
+        {
+            "item": "moreflowerbushes:blue_hortensia"
+        }
+    ],
+    "result": {
+        "item": "minecraft:light_blue_dye",
+        "count": 2
+    }
+}

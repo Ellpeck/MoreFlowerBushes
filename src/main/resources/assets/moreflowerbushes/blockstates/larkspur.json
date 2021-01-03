@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "half=lower": {
+            "model": "moreflowerbushes:block/larkspur_bottom"
+        },
+        "half=upper": {
+            "model": "moreflowerbushes:block/larkspur_top"
+        }
+    }
+}

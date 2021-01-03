@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "red_dye",
+    "ingredients": [
+        {
+            "item": "moreflowerbushes:mountain_laurel"
+        }
+    ],
+    "result": {
+        "item": "minecraft:light_gray_dye",
+        "count": 2
+    }
+}

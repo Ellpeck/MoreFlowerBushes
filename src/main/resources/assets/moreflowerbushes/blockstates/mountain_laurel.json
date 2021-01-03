@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "half=lower": {
+            "model": "moreflowerbushes:block/mountain_laurel_bottom"
+        },
+        "half=upper": {
+            "model": "moreflowerbushes:block/mountain_laurel_top"
+        }
+    }
+}

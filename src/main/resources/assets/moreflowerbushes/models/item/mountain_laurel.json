@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "moreflowerbushes:block/mountain_laurel_top"
+    }
+}

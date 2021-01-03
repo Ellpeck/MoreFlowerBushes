@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "red_dye",
+    "ingredients": [
+        {
+            "item": "moreflowerbushes:blue_sage"
+        }
+    ],
+    "result": {
+        "item": "minecraft:blue_dye",
+        "count": 2
+    }
+}
