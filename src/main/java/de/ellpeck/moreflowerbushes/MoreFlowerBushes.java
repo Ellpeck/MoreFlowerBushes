@@ -52,6 +52,6 @@ public class MoreFlowerBushes {
 
         // composting
         for (RegistryObject<Block> block : BLOCKS.getEntries())
-            ComposterBlock.CHANCES.put(block.get(), 0.65F);
+            ComposterBlock.CHANCES.put(block.get().asItem(), 0.65F);
     }
 }
