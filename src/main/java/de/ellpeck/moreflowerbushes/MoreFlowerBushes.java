@@ -2,22 +2,23 @@ package de.ellpeck.moreflowerbushes;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.ComposterBlock;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.gen.blockplacer.DoublePlantBlockPlacer;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
-import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraftforge.api.distmarker.Dist;
+import net.minecraft.world.gen.feature.*;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.List;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 @Mod(MoreFlowerBushes.ID)
 public class MoreFlowerBushes {
@@ -34,6 +35,8 @@ public class MoreFlowerBushes {
     public static final RegistryObject<Block> BLUE_SAGE = BLOCKS.register("blue_sage", FlowerBlock::new);
     public static final RegistryObject<Block> PURPLE_HIBISCUS = BLOCKS.register("purple_hibiscus", FlowerBlock::new);
 
+    public static ConfiguredFeature<?, ?> flowerFeature;
+
     public MoreFlowerBushes() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::setup);
@@ -41,14 +44,14 @@ public class MoreFlowerBushes {
     }
 
     private void setup(FMLCommonSetupEvent event) {
-        for (RegistryObject<Block> block : BLOCKS.getEntries()) {
-            // spawning
-            ConfiguredFeature<BlockClusterFeatureConfig, ?> feature = Feature.RANDOM_PATCH.withConfiguration((new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(block.get().getDefaultState()), new DoublePlantBlockPlacer())).tries(64).func_227317_b_().build());
-            Registry.register(WorldGenRegistries.field_243653_e, block.getId(), feature);
+        // spawning
+        List<Supplier<ConfiguredFeature<?, ?>>> features = BLOCKS.getEntries().stream()
+                .map(b -> (Supplier<ConfiguredFeature<?, ?>>) () -> Feature.RANDOM_PATCH.withConfiguration((new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(b.get().getDefaultState()), new DoublePlantBlockPlacer())).tries(64).func_227317_b_().build()))
+                .collect(Collectors.toList());
+        flowerFeature = Registry.register(WorldGenRegistries.field_243653_e, new ResourceLocation(ID, "forest_flower_vegetation"), Feature.SIMPLE_RANDOM_SELECTOR.withConfiguration(new SingleRandomFeature(features)).func_242730_a(FeatureSpread.func_242253_a(-3, 4)).withPlacement(Features.Placements.field_244000_k).withPlacement(Features.Placements.field_244001_l).func_242731_b(5));
 
-            // composting
+        // composting
+        for (RegistryObject<Block> block : BLOCKS.getEntries())
             ComposterBlock.CHANCES.put(block.get(), 0.65F);
-        }
-
     }
 }
